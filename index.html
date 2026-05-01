@@ -1,7 +1,8 @@
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Misumeh | Best Anime Texture Packs for Minecraft</title>
     <meta name="description" content="The ultimate archive for high-quality Anime Texture Packs for Minecraft Java & Bedrock. Download over 60+ meticulously crafted textures for Java and Bedrock.">
     <meta name="keywords" content="Anime Texture Packs, Anime Packs, Minecraft Anime Textures, Misumeh, Anime Resource Packs">
@@ -9,6 +10,7 @@
 
     <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjL_Ej2ruuVDRIfjJmwc5a8nvI6u7_aRXwfYw2sFPHTqsN92InN3AQady7LAsYRf71fWmgx2OwC04b4doj8Q11SzNefRurNB1xIQ3BMdoJaM3WoBUkSQHTo7zHiCaMasa25tymW063BCcl3t-87M7NE0LvYuJQJys_hWvykkWJ0ViI2v-sDk9FJuUF3TqFu/s2047/minecraft_title.png">
     <link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjL_Ej2ruuVDRIfjJmwc5a8nvI6u7_aRXwfYw2sFPHTqsN92InN3AQady7LAsYRf71fWmgx2OwC04b4doj8Q11SzNefRurNB1xIQ3BMdoJaM3WoBUkSQHTo7zHiCaMasa25tymW063BCcl3t-87M7NE0LvYuJQJys_hWvykkWJ0ViI2v-sDk9FJuUF3TqFu/s2047/minecraft_title.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -22,179 +24,767 @@
         "@type": "Person",
         "name": "Misumeh"
       }
-    } 
-        </script>
+    }
+    </script>
+
     <style>
         :root {
-            --bg: #030303;
-            --surface: #0a0a0b;
+            --bg: #060607;
+            --surface: #101116;
+            --surface-soft: rgba(255,255,255,0.04);
             --accent: #a855f7;
+            --accent-soft: rgba(168, 85, 247, 0.18);
             --nsfw-accent: #ff2d55;
-            --border: rgba(255, 255, 255, 0.05);
-            --text-dim: #636366;
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8f8fb;
+            --text-dim: #9e9ea9;
         }
-
-        body.nsfw-mode { --accent: var(--nsfw-accent); }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background: var(--bg); color: #fff; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            overflow-x: hidden; transition: background 0.5s ease;
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* --- HERO: THE HOOK --- */
-        .hero {
-            position: relative; height: 100vh; width: 100%;
-            display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center;
-        }
-        .hero-bg {
-            position: absolute; inset: 0; z-index: -1;
-            background-size: cover; background-position: center;
-            opacity: 0; transition: opacity 2s ease;
-            filter: brightness(0.2) saturate(1.5);
-        }
-        .hero-bg.active { opacity: 1; }
-        .hero-content h1 { 
-            font-size: clamp(4rem, 18vw, 12rem); font-weight: 900; 
-            line-height: 0.75; letter-spacing: -6px; text-transform: uppercase;
-        }
-        .hero-content p { 
-            font-family: 'JetBrains Mono', monospace; font-size: 10px; 
-            color: var(--accent); text-transform: uppercase; letter-spacing: 4px; margin-top: 2rem;
+        .page-wrapper {
+            width: min(1200px, calc(100% - 4rem));
+            margin: 0 auto;
         }
 
-        /* --- MEMBERSHIP: THE REVENUE FUNNEL --- */
-        .membership {
-            padding: 10rem 5%; background: linear-gradient(to bottom, var(--bg), #0f0a14);
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            background: rgba(6, 6, 7, 0.9);
+            backdrop-filter: blur(18px);
         }
-        .mem-grid {
-            max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;
-        }
-        .mem-text h2 { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 2rem; }
-        .mem-text p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; }
-        .mem-perks { list-style: none; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-        .mem-perks li { margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 10px; }
-        .mem-perks li::before { content: "→"; color: var(--accent); }
-        
-        .btn-premium {
-            display: inline-block; padding: 1.5rem 3rem; background: var(--accent); color: #000;
-            text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 12px;
-            transition: 0.3s;
-        }
-        .btn-premium:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); }
 
-        /* --- DISCOVERY BAR --- */
-        .discovery-bar {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(3, 3, 3, 0.9); backdrop-filter: blur(20px);
-            padding: 2rem 5%; border-bottom: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
+        .brand {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--text-main);
+            text-transform: uppercase;
         }
-        .search-minimal {
-            background: transparent; border: none; border-bottom: 1px solid var(--border);
-            color: #fff; font-size: 1.5rem; font-weight: 800; width: 40%; outline: none; padding-bottom: 10px;
+
+        .nav-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
         }
-        
-        /* THE "SELL" TOGGLE */
+
+        .icon-link {
+            display: inline-flex;
+            width: 38px;
+            height: 38px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .icon-link img {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+        .icon-link:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent);
+        }
+
+        .btn-outline,
+        .btn-primary,
+        .btn-secondary,
         .nsfw-toggle {
-            display: flex; align-items: center; gap: 15px; cursor: pointer;
-            padding: 10px 20px; border: 1px solid var(--border); transition: 0.3s;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
         }
-        .nsfw-toggle:hover { border-color: var(--nsfw-accent); }
-        .nsfw-toggle span { font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .dot { width: 8px; height: 8px; background: #222; border-radius: 50%; }
-        body.nsfw-mode .dot { background: var(--nsfw-accent); box-shadow: 0 0 10px var(--nsfw-accent); }
 
-        /* --- THE GALLERY --- */
-        .gallery { padding: 6rem 5%; max-width: 1800px; margin: 0 auto; }
-        .discovery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); gap: 4rem; }
-        
-        .pack-item { 
-            text-decoration: none; color: inherit; display: block; 
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .btn-outline,
+        .btn-secondary {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-main);
+            padding: 0.95rem 1.3rem;
+            text-decoration: none;
         }
-        .pack-item:hover { transform: translateY(-10px); }
 
-        .pack-viz { 
-            position: relative; aspect-ratio: 16/10; overflow: hidden; background: #111; 
-            margin-bottom: 2rem;
+        .btn-outline:hover,
+        .btn-secondary:hover,
+        .nsfw-toggle:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
         }
-        .pack-viz img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.8s; }
-        .pack-item:hover .pack-viz img { opacity: 1; transform: scale(1.05); }
 
-        .pack-meta { display: flex; justify-content: space-between; align-items: flex-start; }
-        .pack-title h3 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; line-height: 0.9; }
-        .pack-title span { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; }
-        
-        .pack-tags { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); }
-        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: var(--accent);
+            color: #08080a;
+            padding: 1rem 1.8rem;
+            text-decoration: none;
+            border: none;
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+        }
+
+        .nsfw-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: rgba(255,255,255,0.03);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #222;
+        }
+        body.nsfw-mode .dot {
+            background: var(--nsfw-accent);
+            box-shadow: 0 0 10px var(--nsfw-accent);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #heroBg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.8s ease;
+            filter: brightness(0.28) saturate(1.2);
+        }
+
+        .hero-bg.active { opacity: 1; }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(6,6,7,0.5) 0%, rgba(6,6,7,0.95) 75%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 0 5rem;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.88;
+            letter-spacing: -0.08em;
+            margin: 0;
+            text-transform: uppercase;
+            max-width: 10ch;
+        }
+
+        .hero-desc {
+            margin-top: 2rem;
+            max-width: 620px;
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            padding: 1.4rem 1.5rem;
+            border-radius: 1.6rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+        }
+        .hero-stat strong {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.4rem;
+        }
+        .hero-stat span {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .discovery-bar {
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            padding: 1.5rem 0;
+            background: rgba(6, 6, 7, 0.95);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .discovery-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .section-label {
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .discovery-inner h2 {
+            margin: 0;
+            font-size: 2rem;
+            line-height: 1.1;
+            max-width: 48rem;
+        }
+
+        .discovery-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            width: min(100%, 640px);
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 220px;
+            padding: 1.1rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .gallery {
+            padding: 4rem 0 6rem;
+        }
+
+        .load-more-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .pack-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .pack-item {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            border-radius: 28px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        .pack-item:visited {
+            color: inherit;
+        }
+        .pack-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.28);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .pack-viz {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            background: #08080a;
+        }
+        .pack-viz img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+        .pack-item:hover .pack-viz img {
+            transform: scale(1.05);
+            opacity: 0.95;
+        }
+
+        .pack-meta {
+            padding: 1.7rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .pack-title {
+            max-width: 60%;
+        }
+        .pack-title h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+        .pack-title span {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        .pack-tags {
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            min-width: 120px;
+        }
+
         .nsfw-indicator {
-            position: absolute; bottom: 0; right: 0; background: var(--nsfw-accent);
-            color: #fff; padding: 10px 20px; font-weight: 900; font-size: 10px; text-transform: uppercase;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--nsfw-accent);
+            color: #fff;
+            padding: 0.65rem 1rem;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
         }
 
-        @media (max-width: 1000px) {
-            .discovery-grid { grid-template-columns: 1fr; }
-            .mem-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 5rem; }
+        .membership {
+            padding: 4rem 0 6rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .membership-card,
+        .perks-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 2rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            background: rgba(168,85,247,0.14);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .membership-card h3 {
+            margin: 0;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+        .membership-card p {
+            margin: 1.5rem 0 2rem;
+            color: var(--text-dim);
+            max-width: 560px;
+            line-height: 1.9;
+        }
+
+        .perks-card h4 {
+            margin: 0 0 1.4rem;
+            color: var(--accent);
+            font-size: 0.95rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+        .perks-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 1rem;
+        }
+        .perks-card li {
+            position: relative;
+            padding-left: 1.4rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .perks-card li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            top: 0;
+        }
+
+        .membership-intro {
+            margin-bottom: 2.5rem;
+        }
+        .membership-intro h2 {
+            margin: 0;
+            font-size: clamp(2.2rem, 2.8vw, 3rem);
+            line-height: 1.05;
+        }
+        .membership-intro p {
+            color: var(--text-dim);
+            max-width: 760px;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .subscription-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(260px, 1fr));
+            gap: 1.75rem;
+        }
+        .sub-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .sub-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+        .sub-body {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .sub-tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .sub-title {
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 1.2;
+        }
+        .sub-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .sub-price strong {
+            font-size: 2rem;
+            line-height: 1;
+        }
+        .sub-price span {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        .sub-desc {
+            margin: 0;
+            color: var(--text-dim);
+            line-height: 1.75;
+        }
+        .sub-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+        .sub-features li {
+            position: relative;
+            padding-left: 1.3rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .sub-features li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            top: 0;
+        }
+        .sub-card-footer {
+            margin-top: auto;
+        }
+
+        .footer {
+            padding: 3rem 0 4rem;
+            text-align: center;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 1080px) {
+            .hero-stats {
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+            }
+            .membership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .top-nav,
+            .discovery-inner,
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .top-nav {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .pack-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pack-title {
+                max-width: 100%;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero-content {
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-actions,
+            .nav-actions {
+                align-items: stretch;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div id="heroBg" class="hero-bg-wrap"></div>
-        <div class="hero-content">
-            <p>Best Anime Texture Packs for Minecraft Java & Bedrock</p>
-            <h1>MISUMEH</h1>
-        </div>
-    </header>
-
-    <section class="membership">
-        <div class="mem-grid">
-            <div class="mem-text">
-                <h2>The Ad-Free <br>Experience</h2>
-                <p>Support the project and unlock the full potential of Misumeh. Direct Links, NSFW Characters, and early access.</p>
-                <a href="https://www.patreon.com/c/MisuPacks" class="btn-premium">Access Premium Archive</a>
+    <div class="page-wrapper">
+        <header class="top-nav">
+            <a class="brand" href="index.html">MISUMEH</a>
+            <div class="nav-actions">
+                <a href="#gallery" class="btn-outline">Packs</a>
+                <a href="#membership" class="btn-outline">Membership</a>
+                <a href="https://discord.gg/BGB66CWGnj" target="_blank" rel="noopener" class="icon-link" aria-label="Discord">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord">
+                </a>
+                <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="icon-link" aria-label="Patreon">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/065/386/612/small/patreon-white-icon-logo-app-transparent-background-premium-social-media-design-for-digital-download-free-png.png" alt="Patreon">
+                </a>
             </div>
-            <div>
-                <ul class="mem-perks">
-                    <li>AD-FREE DIRECT DOWNLOADS</li>
-                    <li>EXCLUSIVE NSFW CONTENT INCLUSIONS</li>
-                    <li>EARLY ACCESS TO NEW CHARACTER PACKS</li>
-                    <li>PRIVATE DISCORD LOUNGE ACCESS</li>
-                    <li>VOTE ON FUTURE CHARACTER RELEASES</li>
-                </ul>
+        </header>
+    </div>
+
+    <section class="hero">
+        <div id="heroBg"></div>
+        <div class="page-wrapper hero-content">
+            <p class="eyebrow">Best Anime Texture Packs for Minecraft</p>
+            <h1>Misumeh</h1>
+            <p class="hero-desc">Explore the best anime texture packs for Minecraft Java and Bedrock. Browse fast, filter instantly, and unlock premium NSFW variants through Patreon.</p>
+            <div class="hero-actions">
+                <a href="#gallery" class="btn-primary">Browse packs</a>
+                <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-secondary">Join Patreon</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong id="packsTotal">0</strong><span>Packs Available</span></div>
+                <div class="hero-stat"><strong id="nsfwTotal">0</strong><span>NSFW Versions</span></div>
+                <div class="hero-stat"><strong id="featuredTotal">0</strong><span>Java & Bedrock</span></div>
             </div>
         </div>
     </section>
 
-    <nav class="discovery-bar">
-        <input type="text" id="searchInput" class="search-minimal" placeholder="Discover packs..." oninput="render()">
-        
-        <div class="nsfw-toggle" onclick="toggleNsfw()">
-            <div class="dot"></div>
-            <span>NSFW AVAILABLE</span>
-        </div>
-    </nav>
-
-    <main class="gallery">
-        <div class="discovery-grid" id="discoveryGrid">
+    <section class="discovery-bar">
+        <div class="page-wrapper discovery-inner">
+            <div>
+                <p class="section-label">Find your next favorite pack</p>
+                <h2>Search, filter, and discover instantly.</h2>
             </div>
+            <div class="discovery-actions">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search packs, animes, or versions…" oninput="render()">
+                <button class="nsfw-toggle" onclick="toggleNsfw()">
+                    <span class="dot"></span>
+                    <span>NSFW</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main class="gallery" id="gallery">
+        <div class="page-wrapper">
+            <div class="pack-grid" id="discoveryGrid"></div>
+            <div class="load-more-wrap">
+                <button id="loadMoreBtn" class="btn-secondary" onclick="loadMore()">Load more packs</button>
+            </div>
+        </div>
     </main>
+
+    <section id="membership" class="membership">
+        <div class="page-wrapper">
+            <div class="membership-intro">
+                <p class="section-label">Membership plans</p>
+                <h2>Choose your subscription</h2>
+                <p>Find the plan built for your pack needs: from instant SFW access to the full NSFW archive, all backed by direct links and Discord perks.</p>
+            </div>
+            <div class="subscription-grid">
+                <article class="sub-card">
+                    <img class="sub-thumb" src="https://c10.patreonusercontent.com/4/patreon-media/p/reward/28297996/06171f6a9e064e5ab29e5ce49b5d330c/eyJ3Ijo0MDB9/1.png?token-hash=R8io04pSQHwL7j0kTe0pqpyaCqEjY5ncE1Jyv23dLS4%3D" alt="Modern membership thumbnail">
+                    <div class="sub-body">
+                        <span class="sub-tag">Modern</span>
+                        <h3 class="sub-title">The Ultimate SFW Library</h3>
+                        <div class="sub-price"><strong>$9.99</strong><span>/ month</span></div>
+                        <p class="sub-desc">This starter tier gives you instant, organized access to my complete collection of SFW content. No ads, no shorteners—just direct access.</p>
+                        <ul class="sub-features">
+                            <li>Entire library of Anime Texture Packs with instant access.</li>
+                            <li>Easy organized Mediafire folder with direct links.</li>
+                            <li>Always current for modern versions like 1.21 & 26.1.</li>
+                            <li>Exclusive packs not available publicly, including Bachira Meguru.</li>
+                            <li>Includes an exclusive Discord role and Discord access.</li>
+                        </ul>
+                        <div class="sub-card-footer">
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="sub-card">
+                    <img class="sub-thumb" src="https://c10.patreonusercontent.com/4/patreon-media/p/reward/28438405/8f7cea85bf224fa08c828b613712a5c1/eyJ3Ijo0MDB9/1.png?token-hash=My6nuSPAajxocnLM5Mzf_BlKt5x_ZJHa3EQrZnnbhW8%3D" alt="Classics membership thumbnail">
+                    <div class="sub-body">
+                        <span class="sub-tag">Classics</span>
+                        <h3 class="sub-title">Complete NSFW Hentai Sky Access</h3>
+                        <div class="sub-price"><strong>$14.99</strong><span>/ month</span></div>
+                        <p class="sub-desc">This mid-tier is for users who want to customize their world's skies with my full archive of Hentai Sky Packs.</p>
+                        <ul class="sub-features">
+                            <li>Full access to every Hentai sky overlay I’ve made.</li>
+                            <li>4 monthly shop credits for 4 sky overlays at no extra cost.</li>
+                            <li>Includes all Modern tier benefits and direct Mediafire links.</li>
+                            <li>Exclusive Discord role and Discord access included.</li>
+                        </ul>
+                        <div class="sub-card-footer">
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="sub-card">
+                    <img class="sub-thumb" src="https://c10.patreonusercontent.com/4/patreon-media/p/reward/28438409/4e5b9d9eb5074de6a5b82d8278f097a2/eyJ3Ijo0MDB9/1.png?token-hash=5LKVqFmiwj7bTdr5mrRE5-CTlI2eUtYD0Iadj9Rezpo%3D" alt="Nightly membership thumbnail">
+                    <div class="sub-body">
+                        <span class="sub-tag">Nightly</span>
+                        <h3 class="sub-title">The Definitive NSFW Archive</h3>
+                        <div class="sub-price"><strong>$19.99</strong><span>/ month</span></div>
+                        <p class="sub-desc">The final tier for those who want everything. This is the most cost-effective way to get my premium NSFW packs and shop items.</p>
+                        <ul class="sub-features">
+                            <li>Full library of NSFW Texture Packs with all versions and previews.</li>
+                            <li>Premium bundles included: Demon Slayer, Roshidere, Reze, Zero Two, and more.</li>
+                            <li>3 gold credits monthly to permanently unlock any 3 packs.</li>
+                            <li>Includes all Modern tier benefits plus exclusive Discord perks.</li>
+                        </ul>
+                        <div class="sub-card-footer">
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="page-wrapper footer">
+        <p>Misumeh — curated Anime Texture Packs for Minecraft</p>
+    </footer>
 
     <script>
         let packs = [];
         let nsfwActive = false;
+        let visibleCount = 6;
+        let lastQuery = '';
 
         async function init() {
             const r = await fetch('packs.json');
             packs = await r.json();
 
-            // HERO ENGINE
             const heroWrap = document.getElementById('heroBg');
             const slides = packs.slice(0, 5).map((p, i) => {
                 const div = document.createElement('div');
@@ -211,6 +801,10 @@
                 slides[current].classList.add('active');
             }, 5000);
 
+            document.getElementById('packsTotal').textContent = packs.length;
+            document.getElementById('nsfwTotal').textContent = packs.filter(p => p.links?.nsfw).length;
+            document.getElementById('featuredTotal').textContent = packs.filter(p => p.tags?.version).length || packs.length;
+
             render();
         }
 
@@ -220,34 +814,55 @@
             render();
         }
 
+        function loadMore() {
+            visibleCount += 6;
+            render();
+        }
+
+        function updateLoadMore(filtered) {
+            const btn = document.getElementById('loadMoreBtn');
+            if (!btn) return;
+            btn.style.display = filtered.length > visibleCount ? 'inline-flex' : 'none';
+        }
+
         function render() {
             const grid = document.getElementById('discoveryGrid');
             const q = document.getElementById('searchInput').value.toLowerCase();
-            
+
+            if (q !== lastQuery) {
+                visibleCount = 6;
+                lastQuery = q;
+            }
+
             const filtered = packs.filter(p => {
-                const matchesSearch = p.name.toLowerCase().includes(q) || p.tags.origin.toLowerCase().includes(q);
-                const matchesNsfw = !nsfwActive || p.links.nsfw !== "";
+                const origin = p.tags?.origin || '';
+                const version = p.tags?.version || '';
+                const matchesSearch = [p.name, origin, version].some(value => value.toLowerCase().includes(q));
+                const matchesNsfw = !nsfwActive || p.links?.nsfw;
                 return matchesSearch && matchesNsfw;
             });
 
-            grid.innerHTML = filtered.map(p => `
+            const visible = filtered.slice(0, visibleCount);
+            grid.innerHTML = visible.map(p => `
                 <a href="pack.html?id=${p.id}" class="pack-item">
                     <div class="pack-viz">
                         <img src="${p.thumb}" alt="${p.name}" loading="lazy">
-                        ${p.links.nsfw ? '<div class="nsfw-indicator">Premium NSFW Inclusion</div>' : ''}
+                        ${p.links?.nsfw ? '<div class="nsfw-indicator">Premium NSFW Inclusion</div>' : ''}
                     </div>
                     <div class="pack-meta">
                         <div class="pack-title">
-                            <span>${p.tags.origin}</span>
+                            <span>${p.tags?.origin || 'Texture Pack'}</span>
                             <h3>${p.name}</h3>
                         </div>
                         <div class="pack-tags">
-                            <p>${p.tags.res}</p>
-                            <p>${p.tags.version || 'Java/Bedrock'}</p>
+                            <p>${p.tags?.res || 'Unknown res'}</p>
+                            <p>${p.tags?.version || 'Java/Bedrock'}</p>
                         </div>
                     </div>
                 </a>
             `).join('');
+
+            updateLoadMore(filtered);
         }
 
         init();
