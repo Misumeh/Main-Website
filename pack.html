@@ -16,56 +16,6 @@
             margin: 0 auto;
         }
 
-        .btn-outline,
-        .btn-primary,
-        .btn-secondary,
-        .nsfw-toggle {
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-        }
-
-        .btn-outline,
-        .btn-secondary {
-            background: rgba(255,255,255,0.03);
-            color: var(--text-main);
-            padding: 0.95rem 1.3rem;
-            text-decoration: none;
-        }
-
-        .btn-outline:hover,
-        .btn-secondary:hover,
-        .nsfw-toggle:hover {
-            border-color: var(--accent);
-            transform: translateY(-1px);
-        }
-
-
-        .back-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            align-items: center;
-            gap: 12px;
-            transition: 0.3s;
-            padding: 0.95rem 1.3rem;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
-        }
-        .back-link:hover {
-            color: #fff;
-            transform: translateX(-8px);
-            border-color: var(--accent);
-        }
-
         /* --- HERO --- */
         .hero {
             position: relative;
@@ -110,75 +60,7 @@
             position: relative;
             z-index: 20;
             padding-bottom: 5rem;
-        }
-        .video-box { background: #000; border: 1px solid var(--border); aspect-ratio: 16/9; box-shadow: 0 60px 120px rgba(0,0,0,0.9); border-radius: 28px; }
-        .video-box iframe { width: 100%; height: 100%; border: none; }
-
-        .feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
-        .feature-card { background: var(--surface); padding: 2.2rem; border: 1px solid var(--border); border-radius: 12px; }
-        .feature-card label { display: block; color: var(--accent); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
-        .feature-card p { margin: 0; font-size: 1.3rem; font-weight: 700; }
-
-        /* --- SIDEBAR --- */
-        .sidebar { position: sticky; top: 4rem; height: fit-content; }
-        .db-card { background: var(--surface); border: 1px solid var(--border); overflow: hidden; border-radius: 28px; }
-        .db-header { background: rgba(255, 255, 255, 0.02); padding: 1.8rem 2.2rem; border-bottom: 1px solid var(--border); }
-        .db-header h3 { font-size: 1rem; font-weight: 900; margin: 0; letter-spacing: 2px; }
-        .db-header p { font-size: 0.65rem; color: var(--text-dim); margin-top: 6px; text-transform: uppercase; }
-
-        .dl-list { padding: 1.8rem; display: flex; flex-direction: column; gap: 10px; }
-        .dl-slot {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem; background: rgba(255,255,255,0.01);
-            border: 1px solid var(--border); text-decoration: none; transition: 0.3s; border-radius: 12px;
-        }
-        .dl-slot:hover { background: rgba(255,255,255,0.04); border-color: var(--text-dim); transform: scale(1.01); }
-        .dl-slot.patreon-only {
-            background: rgba(168, 85, 247, 0.05);
-            border-color: var(--accent);
-        }
-        .dl-slot.patreon-only:hover {
-            background: rgba(168, 85, 247, 0.1);
-            border-color: var(--accent);
-        }
-        .slot-meta span { display: block; font-size: 0.8rem; font-weight: 800; color: #fff; }
-        .slot-meta small { font-size: 0.6rem; color: #ffb84e; font-weight: 800; }
-
-        .premium-action {
-            margin: 1.8rem; margin-top: 0; padding: 2rem;
-            background: var(--accent); text-decoration: none; display: block; text-align: center; transition: 0.3s; border-radius: 28px;
-        }
-        .premium-action:hover { filter: brightness(1.1); transform: translateY(-4px); }
-        .premium-action h4 { color: #fff; margin: 0; font-size: 1rem; font-weight: 900; }
-        .premium-action p { color: rgba(255,255,255,0.85); margin: 6px 0 0 0; font-size: 0.7rem; font-weight: 700; }
-
-        /* --- RECOMMENDATIONS --- */
-        .recs-section { margin-top: 0.1rem; padding-bottom: 0.1rem; }
-        .recs-header { margin-bottom: 2.5rem; display: flex; align-items: center; gap: 20px; }
-        .recs-header h2 { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; margin: 0; text-transform: uppercase; }
-        .recs-header .line { height: 2px; flex-grow: 1; background: var(--border); }
-
-        .recs-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-        .rec-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            text-decoration: none;
-            color: inherit;
-            transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
-            position: relative;
-            border-radius: 28px;
-        }
-        .rec-card:hover { border-color: var(--accent); transform: translateY(-10px); }
-        .rec-thumb { width: 100%; aspect-ratio: 16/9; background-size: cover; background-position: center; }
-        .rec-info { padding: 1.5rem; }
-        .rec-info h4 { margin: 0; font-size: 1rem; font-weight: 800; text-transform: uppercase; }
-        .rec-info span { font-size: 0.65rem; color: var(--accent); font-weight: 800; letter-spacing: 1px; }
-
-   
+        } 
 
         @media (max-width: 1080px) {
             .footer-content {
@@ -236,12 +118,12 @@
             // Distribution Slots
             let slots = '';
             const l = pack.links;
-            const icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>';
+            const icon = '<i class="fa-solid fa-arrow-up-right-from-square margin-icon"></i>';
             
-            if(l.j189) slots += `<a href="${l.j189}" target="_blank" class="dl-slot"><div class="slot-meta"><span>JAVA LEGACY (1.8)</span><small>AD-SUPPORTED</small></div>${icon}</a>`;
-            if(l.j121) slots += `<a href="${l.j121}" target="_blank" class="dl-slot patreon-only"><div class="slot-meta"><span>JAVA MODERN (26.1 / 1.21)</span><small>PATREON ONLY</small></div>${icon}</a>`;
-            if(l.bedrock) slots += `<a href="${l.bedrock}" target="_blank" class="dl-slot"><div class="slot-meta"><span>BEDROCK EDITION</span><small>AD-SUPPORTED</small></div>${icon}</a>`;
-            if(l.nsfw) slots += `<a href="${l.nsfw}" target="_blank" class="dl-slot patreon-only" style="background:rgba(248,113,113,0.05);border-color:#450a0a;border-radius:12px"><div class="slot-meta"><span style="color:#f87171">NSFW EDITION</span><small style="color:#a855f7">PATREON ONLY</small></div>${icon}</a>`;
+            if(l.j189) slots += `<a href="${l.j189}" target="_blank" class="dl-slot"><div class="slot-meta"><span><i class="fa-solid fa-laptop margin-icon"></i> JAVA LEGACY (1.8)</span><small>SLOW & AD SUPPORTED</small></div>${icon}</a>`;
+            if(l.j121) slots += `<a href="${l.j121}" target="_blank" class="dl-slot patreon-only" style="background: rgba(52, 27, 75, 0.18);border-color: var(--accent);border-radius:12px"> <div class="slot-meta"><span style="color: var(--accent)"><i class="fa-solid fa-computer margin-icon"></i> JAVA MODERN (26.1 / 1.21)</span><small style="color:#a855f7">DIRECT LINK & PATREON ONLY</small></div>${icon}</a>`;
+            if(l.bedrock) slots += `<a href="${l.bedrock}" target="_blank" class="dl-slot"><div class="slot-meta"><span><i class="fa-solid fa-mobile-screen margin-icon"></i> BEDROCK EDITION</span><small>SLOW & AD SUPPORTED</small></div>${icon}</a>`;
+            if(l.nsfw) slots += `<a href="${l.nsfw}" target="_blank" class="dl-slot patreon-only nsfw" style="background:rgba(248,113,113,0.05);border-color: var(--nsfw-accent);border-radius:12px"><div class="slot-meta"><span style="color: var(--nsfw-accent)"><i class="fa-solid fa-lock margin-icon"></i> NSFW EDITION</span><small style="color:#f97580">DIRECT LINK & PATREON ONLY</small></div>${icon}</a>`;
 
             // Recommendations Logic (Shuffle and take 4 excluding current)
             const recs = packs.filter(p => String(p.id) !== String(id)).sort(() => 0.5 - Math.random()).slice(0, 4);
@@ -293,7 +175,7 @@
                         <aside class="sidebar">
                             <div class="db-card">
                                 <div class="db-header">
-                                    <h3>DOWNLOADS</h3>
+                                    <h3><i class="fa-solid fa-download"></i> DOWNLOADS</h3>
                                     <p>Select Your Game Version</p>
                                 </div>
                                 <div class="dl-list">${slots}</div>
