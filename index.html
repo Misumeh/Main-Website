@@ -11,7 +11,9 @@
     <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjL_Ej2ruuVDRIfjJmwc5a8nvI6u7_aRXwfYw2sFPHTqsN92InN3AQady7LAsYRf71fWmgx2OwC04b4doj8Q11SzNefRurNB1xIQ3BMdoJaM3WoBUkSQHTo7zHiCaMasa25tymW063BCcl3t-87M7NE0LvYuJQJys_hWvykkWJ0ViI2v-sDk9FJuUF3TqFu/s2047/minecraft_title.png">
     <link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjL_Ej2ruuVDRIfjJmwc5a8nvI6u7_aRXwfYw2sFPHTqsN92InN3AQady7LAsYRf71fWmgx2OwC04b4doj8Q11SzNefRurNB1xIQ3BMdoJaM3WoBUkSQHTo7zHiCaMasa25tymW063BCcl3t-87M7NE0LvYuJQJys_hWvykkWJ0ViI2v-sDk9FJuUF3TqFu/s2047/minecraft_title.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="custom-cursor.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -28,123 +30,12 @@
     </script>
 
     <style>
-        :root {
-            --bg: #060607;
-            --surface: #101116;
-            --surface-soft: rgba(255,255,255,0.04);
-            --accent: #a855f7;
-            --accent-soft: rgba(168, 85, 247, 0.18);
-            --nsfw-accent: #ff2d55;
-            --border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8f8fb;
-            --text-dim: #9e9ea9;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background: var(--bg);
-            color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
 
         .page-wrapper {
             width: min(1200px, calc(100% - 8rem));
             margin: 0 auto;
         }
 
-        .top-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 2rem;
-            background: rgba(6, 6, 7, 0.9);
-            backdrop-filter: blur(18px);
-        }
-
-        .brand {
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: var(--text-main);
-            text-transform: uppercase;
-            margin-left: 1rem;
-        }
-
-        .nav-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .icon-link {
-            display: inline-flex;
-            width: 38px;
-            height: 38px;
-            align-items: center;
-            justify-content: center;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-        .icon-link img {
-            width: 20px;
-            height: 20px;
-            display: block;
-        }
-        .icon-link:hover {
-            transform: translateY(-1px);
-            border-color: var(--accent);
-        }
-
-        .btn-outline,
-        .btn-primary,
-        .btn-secondary,
-        .nsfw-toggle {
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-        }
-
-        .btn-outline,
-        .btn-secondary {
-            background: rgba(255,255,255,0.03);
-            color: var(--text-main);
-            padding: 0.95rem 1.3rem;
-            text-decoration: none;
-        }
-
-        .btn-outline:hover,
-        .btn-secondary:hover,
-        .nsfw-toggle:hover {
-            border-color: var(--accent);
-            transform: translateY(-1px);
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            background: var(--accent);
-            color: #08080a;
-            padding: 1rem 1.8rem;
-            text-decoration: none;
-            border: none;
-            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
-        }
 
         .nsfw-toggle {
             display: inline-flex;
@@ -418,183 +309,18 @@
             letter-spacing: 0.12em;
         }
 
-        .membership {
-            padding: 4rem 0 6rem;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
 
-        .membership-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .membership-card,
-        .perks-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 2rem;
-        }
-
-        .badge {
-            display: inline-flex;
-            padding: 0.7rem 1rem;
-            border-radius: 999px;
-            background: rgba(168,85,247,0.14);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .membership-card h3 {
-            margin: 0;
-            font-size: 2rem;
-            line-height: 1.1;
-        }
-        .membership-card p {
-            margin: 1.5rem 0 2rem;
-            color: var(--text-dim);
-            max-width: 560px;
-            line-height: 1.9;
-        }
-
-        .perks-card h4 {
-            margin: 0 0 1.4rem;
-            color: var(--accent);
-            font-size: 0.95rem;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-        }
-        .perks-card ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            gap: 1rem;
-        }
-        .perks-card li {
-            position: relative;
-            padding-left: 1.4rem;
-            color: var(--text-main);
-            line-height: 1.7;
-        }
-        .perks-card li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1rem;
-            top: 0;
-        }
-
-        .membership-intro {
-            margin-bottom: 2.5rem;
-        }
-        .membership-intro h2 {
-            margin: 0;
-            font-size: clamp(2.2rem, 2.8vw, 3rem);
-            line-height: 1.05;
-        }
-        .membership-intro p {
-            color: var(--text-dim);
-            max-width: 760px;
-            line-height: 1.8;
-            margin-top: 1rem;
-        }
-
-        .subscription-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(260px, 1fr));
-            gap: 1.75rem;
-        }
-        .sub-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .sub-thumb {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            display: block;
-        }
-        .sub-body {
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .sub-tag {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 0.75rem;
-            font-weight: 800;
-        }
-        .sub-title {
-            margin: 0;
-            font-size: 1.4rem;
-            line-height: 1.2;
-        }
-        .sub-price {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-        .sub-price strong {
-            font-size: 2rem;
-            line-height: 1;
-        }
-        .sub-price span {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-        .sub-desc {
-            margin: 0;
-            color: var(--text-dim);
-            line-height: 1.75;
-        }
-        .sub-features {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            gap: 0.75rem;
-        }
-        .sub-features li {
-            position: relative;
-            padding-left: 1.3rem;
-            color: var(--text-main);
-            line-height: 1.7;
-        }
-        .sub-features li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1rem;
-            top: 0;
-        }
-        .sub-card-footer {
-            margin-top: auto;
-        }
-
-        .footer {
-            padding: 3rem 0 4rem;
-            text-align: center;
-            color: var(--text-dim);
-        }
+  
 
         @media (max-width: 1080px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
             .hero-stats {
                 grid-template-columns: repeat(2, minmax(140px, 1fr));
             }
@@ -645,23 +371,20 @@
     </style>
 </head>
 <body>
-
-    <div class="page-wrapper">
-        <header class="top-nav">
-            <a class="brand" href="index.html">MISUMEH</a>
+<custom-cursor></custom-cursor>
+    <header class="top-nav">
+            <a class="brand" href="#">MISU<span style="color: var(--accent);">MEH</span></a>
             <div class="nav-actions">
-                <a href="#gallery" class="btn-outline">Packs</a>
-                <a href="#membership" class="btn-outline">Membership</a>
+                <a href="#membership" class="btn-outline"><i class="fa-solid fa-user-plus margin-icon"></i>Membership</a>
                 <a href="https://discord.gg/BGB66CWGnj" target="_blank" rel="noopener" class="icon-link" aria-label="Discord">
-                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord">
+                    <i class="fa-brands fa-discord" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="icon-link" aria-label="Patreon">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/065/386/612/small/patreon-white-icon-logo-app-transparent-background-premium-social-media-design-for-digital-download-free-png.png" alt="Patreon">
+                    <i class="fa-brands fa-patreon" aria-hidden="true"></i>
                 </a>
             </div>
-        </header>
-    </div>
-
+    </header>
+    <div>
     <section class="hero">
         <div id="heroBg"></div>
         <div class="page-wrapper hero-content">
@@ -669,16 +392,18 @@
             <h1>Misumeh</h1>
             <p class="hero-desc">Explore the best anime texture packs for Minecraft Java and Bedrock. Browse fast, filter instantly, and unlock premium NSFW variants through Patreon.</p>
             <div class="hero-actions">
-                <a href="#gallery" class="btn-primary">Browse packs</a>
-                <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-secondary">Join Patreon</a>
+                <a href="#gallery" class="btn-primary"><i class="fa-solid fa-magnifying-glass margin-icon"></i>Browse packs</a>
+                <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-secondary"><i class="fa-brands fa-patreon margin-icon"></i>Join Patreon</a>
             </div>
             <div class="hero-stats">
                 <div class="hero-stat"><strong id="packsTotal">0</strong><span>Packs Available</span></div>
-                <div class="hero-stat"><strong id="nsfwTotal">0</strong><span>NSFW Versions</span></div>
-                <div class="hero-stat"><strong id="featuredTotal">0</strong><span>Java & Bedrock</span></div>
+                <div class="hero-stat"><strong id="featuredTotal">0</strong><span>Bedrock Versions</span></div>
+                   <div class="hero-stat"><strong id="nsfwTotal">0</strong><span>NSFW Versions</span></div>
+
             </div>
         </div>
     </section>
+
 
     <section class="discovery-bar">
         <div class="page-wrapper discovery-inner">
@@ -700,7 +425,7 @@
         <div class="page-wrapper">
             <div class="pack-grid" id="discoveryGrid"></div>
             <div class="load-more-wrap">
-                <button id="loadMoreBtn" class="btn-secondary" onclick="loadMore()">Load more packs</button>
+                <button id="loadMoreBtn" class="btn-secondary" onclick="loadMore()"><i class="fa-solid fa-plus margin-icon"></i>Load more packs</button>
             </div>
         </div>
     </main>
@@ -728,7 +453,7 @@
                             <li>Includes an exclusive Discord role and Discord access.</li>
                         </ul>
                         <div class="sub-card-footer">
-                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-user-plus"></i>Join</a>
                         </div>
                     </div>
                 </article>
@@ -746,7 +471,7 @@
                             <li>Exclusive Discord role and Discord access included.</li>
                         </ul>
                         <div class="sub-card-footer">
-                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-user-plus"></i>Join</a>
                         </div>
                     </div>
                 </article>
@@ -764,7 +489,7 @@
                             <li>Includes all Modern tier benefits plus exclusive Discord perks.</li>
                         </ul>
                         <div class="sub-card-footer">
-                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary">Join</a>
+                            <a href="https://www.patreon.com/cw/MisuPacks" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-user-plus"></i>Join</a>
                         </div>
                     </div>
                 </article>
@@ -772,8 +497,42 @@
         </div>
     </section>
 
-    <footer class="page-wrapper footer">
-        <p>Misumeh — curated Anime Texture Packs for Minecraft</p>
+    <footer class="footer">
+        <div class="page-wrapper">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span style="color: #ffffff;">MISU<span style="color: var(--accent);">MEH</h3>
+                   <ul>
+                    <li><a href="index.html"><i class="fa-brands fa-youtube margin-icon"></i>YouTube Channel</a></li>
+                    <li><a href="index.html#membership"><i class="fa-brands fa-instagram margin-icon"></i> Instagram Profile</a></li>
+                    <li><a href="https://discord.gg/BGB66CWGnj" target="_blank"><i class="fa-brands fa-twitter margin-icon"></i> Twitter Feed</a></li>
+                    <li><a href="https://www.patreon.com/cw/MisuPacks" target="_blank"><i class="fa-brands fa-tiktok margin-icon"></i> TikTok Videos</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="index.html"><i class="fa-solid fa-magnifying-glass margin-icon"></i>Browse Packs</a></li>
+                            <li><a href="index.html#membership"><i class="fa-solid fa-user-plus margin-icon"></i>Membership</a></li>
+                            <li><a href="https://discord.gg/BGB66CWGnj" target="_blank"><i class="fa-brands fa-discord margin-icon"></i>Discord Community</a></li>
+                            <li><a href="https://www.patreon.com/cw/MisuPacks" target="_blank"><i class="fa-brands fa-patreon margin-icon"></i>Support on Patreon</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html"><i class="fa-solid fa-file-contract margin-icon"></i>Terms of Service</a></li>
+                            <li><a href="privacy.html"><i class="fa-solid fa-shield-halved margin-icon"></i>Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Misumeh. All rights reserved.</p>
+                <p>Made with <i class="fa-solid fa-heart" style="color: var(--accent);"></i> for the Minecraft community</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -848,7 +607,7 @@
                 <a href="pack.html?id=${p.id}" class="pack-item">
                     <div class="pack-viz">
                         <img src="${p.thumb}" alt="${p.name}" loading="lazy">
-                        ${p.links?.nsfw ? '<div class="nsfw-indicator">Premium NSFW Inclusion</div>' : ''}
+                        ${p.links?.nsfw ? '<div class="nsfw-indicator">NSFW Available</div>' : ''}
                     </div>
                     <div class="pack-meta">
                         <div class="pack-title">
