@@ -397,9 +397,8 @@
             </div>
             <div class="hero-stats">
                 <div class="hero-stat"><strong id="packsTotal">0</strong><span>Packs Available</span></div>
-                <div class="hero-stat"><strong id="featuredTotal">0</strong><span>Bedrock Versions</span></div>
-                   <div class="hero-stat"><strong id="nsfwTotal">0</strong><span>NSFW Versions</span></div>
-
+                <div class="hero-stat"><strong id="nsfwTotal">0</strong><span>NSFW Versions</span></div>
+                <div class="hero-stat"><strong id="charTotal">0</strong><span>Characters Made</span></div>
             </div>
         </div>
     </section>
@@ -563,7 +562,8 @@
 
             document.getElementById('packsTotal').textContent = packs.length;
             document.getElementById('nsfwTotal').textContent = packs.filter(p => p.links?.nsfw).length;
-            document.getElementById('featuredTotal').textContent = packs.filter(p => p.tags?.version).length || packs.length;
+            const uniqueChars = [...new Set(packs.map(p => p.tags?.char).filter(Boolean))];
+            document.getElementById('charTotal').textContent = uniqueChars.length;
 
             render();
         }
