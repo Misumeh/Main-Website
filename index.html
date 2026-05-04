@@ -312,7 +312,48 @@
 
   
 
+        .nav-toggle {
+            display: none;
+            border: none;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-main);
+            padding: 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+        .nav-toggle:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+
         @media (max-width: 1080px) {
+            .page-wrapper {
+                width: 100%;
+                max-width: 100%;
+                padding: 0 1.5rem;
+            }
+            .pack-grid {
+                grid-template-columns: repeat(2, minmax(260px, 1fr));
+            }
+            .membership-grid {
+                grid-template-columns: repeat(2, minmax(280px, 1fr));
+            }
+            .hero-stats {
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+            }
+            .top-nav.nav-open .nav-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 0.8rem;
+                margin-top: 1rem;
+            }
+            .top-nav.nav-open .nav-actions a,
+            .top-nav.nav-open .nav-actions .icon-link {
+                width: 100%;
+            }
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -321,51 +362,96 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+        }
+
+        @media (max-width: 760px) {
+            .page-wrapper {
+                width: 100%;
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            .top-nav {
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1rem;
+                justify-content: space-between;
+            }
+            .nav-toggle {
+                display: inline-flex;
+                order: -1;
+            }
+            .nav-actions {
+                display: none;
+            }
+            .top-nav.nav-open .nav-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 0.8rem;
+                margin-top: 1rem;
+            }
+            .top-nav.nav-open .nav-actions a,
+            .top-nav.nav-open .nav-actions .icon-link {
+                width: 100%;
+            }
+            .top-nav .brand {
+                flex: 1;
+                text-align: center;
+                order: 0;
+            }
+            .hero {
+                min-height: auto;
+                padding-bottom: 1rem;
+            }
+            .hero-content {
+                padding: 3rem 0 2rem;
+            }
+            .hero-desc {
+                max-width: 100%;
+                font-size: 1rem;
+                border-left: none;
+                padding-left: 0;
+            }
             .hero-stats {
-                grid-template-columns: repeat(2, minmax(140px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+            }
+            .hero-stat {
+                padding: 1rem 0.75rem;
+                font-size: 0.9rem;
+            }
+            .hero-stat strong {
+                font-size: 1.8rem;
+            }
+            .hero-actions {
+                flex-direction: row;
+                gap: 0.75rem;
+            }
+            .hero-actions a {
+                flex: 1;
+                text-align: center;
+            }
+            .pack-grid {
+                grid-template-columns: 1fr;
             }
             .membership-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 760px) {
-            .top-nav,
-            .discovery-inner,
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
+            .icon-link {
+                padding: 0.75rem;
             }
-
-            .top-nav {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
+            .icon-link i {
+                font-size: 1rem;
             }
-
-            .search-input {
-                width: 100%;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-
-            .pack-meta {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .pack-title {
-                max-width: 100%;
-            }
-
-            .hero {
-                min-height: 70vh;
-            }
-
-            .hero-content {
-                padding: 4rem 0 3rem;
-            }
-
-            .hero-actions,
-            .nav-actions {
-                align-items: stretch;
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
     </style>
@@ -374,6 +460,9 @@
 <custom-cursor></custom-cursor>
     <header class="top-nav">
             <a class="brand" href="#">MISU<span style="color: var(--accent);">MEH</span></a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <div class="nav-actions">
                 <a href="#membership" class="btn-outline"><i class="fa-solid fa-user-plus margin-icon"></i>Membership</a>
                 <a href="https://discord.gg/BGB66CWGnj" target="_blank" rel="noopener" class="icon-link" aria-label="Discord">
@@ -572,6 +661,11 @@
             nsfwActive = !nsfwActive;
             document.body.classList.toggle('nsfw-mode');
             render();
+        }
+
+        function toggleNav() {
+            const nav = document.querySelector('.top-nav');
+            nav.classList.toggle('nav-open');
         }
 
         function loadMore() {
